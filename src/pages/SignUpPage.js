@@ -52,7 +52,7 @@ export default function SignUpPage() {
         <input
           placeholder="Senha"
           type="password"
-          autocomplete="new-password"
+          autoComplete="new-password"
           value={password}
           onChange={(e)=> setPassaword(e.target.value)}
           required
@@ -60,7 +60,7 @@ export default function SignUpPage() {
         <input
           placeholder="Confirme a senha"
           type="password"
-          autocomplete="new-password"
+          autoComplete="new-password"
           value={confirmPassword}
           onChange={(e)=> setConfirmPassord(e.target.value)}
           required
