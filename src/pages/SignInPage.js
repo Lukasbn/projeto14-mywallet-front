@@ -7,7 +7,7 @@ import { LoggedUser } from "../Context/LoggedUser"
 
 export default function SignInPage() {
 
-  const {token, setToken} = useContext(LoggedUser)
+  const {setToken} = useContext(LoggedUser)
 
   const [email, setEmail] = useState("")
   const [password, setPassaword] = useState("")
@@ -31,8 +31,6 @@ export default function SignInPage() {
       alert(err.response.data)
     })
   }
-
-  console.log(token)
 
   return (
     <SingInContainer>
