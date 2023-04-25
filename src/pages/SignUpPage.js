@@ -20,7 +20,7 @@ export default function SignUpPage() {
       return alert("A senha e a confirmação não são compativeis, confira e tente novamente")
     }
 
-    const URL = "http://localhost:5000/cadastro"
+    const URL = `${process.env.REACT_APP_API_URL}/cadastro`
     const body = {name, password, email}
 
     const promisse = axios.post(URL, body)

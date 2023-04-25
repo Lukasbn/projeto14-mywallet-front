@@ -16,7 +16,7 @@ export default function HomePage() {
 
   useEffect(() => {
 
-    const URL = "http://localhost:5000/home"
+    const URL = `${process.env.REACT_APP_API_URL}/home`
     const authorization = {
       headers: { Authorization: `Bearer ${token}` }
     }
@@ -24,7 +24,6 @@ export default function HomePage() {
     const promisse = axios.get(URL, authorization)
 
     promisse.then((res) => {
-      console.log(res.data)
       setOperations(res.data.transactions.reverse())
       setName(res.data.name)
       setTotal(res.data.total)

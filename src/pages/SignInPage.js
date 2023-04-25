@@ -17,7 +17,7 @@ export default function SignInPage() {
   function logar(e){
     e.preventDefault()
     
-    const URL = "http://localhost:5000/"
+    const URL = `${process.env.REACT_APP_API_URL}/`
     const body = { password, email }
 
     const promisse = axios.post(URL, body)

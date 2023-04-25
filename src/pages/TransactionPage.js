@@ -30,7 +30,7 @@ export default function TransactionsPage() {
 
     const validatedValue = ValueValidation(valor)
 
-    const URL = `http://localhost:5000/nova-transacao/${tipo}`
+    const URL = `${process.env.REACT_APP_API_URL}/nova-transacao/${tipo}`
     const body = { value: validatedValue, description: descricao }
     const authorization = {
       headers: { Authorization: `Bearer ${token}` }
