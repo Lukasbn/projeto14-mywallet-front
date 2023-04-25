@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 export default function TransactionsPage() {
 
-  const [valor, setValor] = useState()
+  const [valor, setValor] = useState('')
   const [descricao, setDescricao] = useState('')
   const { tipo } = useParams()
   const navigate = useNavigate()
