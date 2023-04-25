@@ -1,21 +1,21 @@
 import styled from "styled-components"
 import { BiExit } from "react-icons/bi"
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function HomePage() {
-  
+
   const navigate = useNavigate()
-  function desconect(){
+  function desconect() {
     localStorage.removeItem('token')
     navigate(0)
   }
-  
+
   return (
     <HomeContainer>
       <Header>
         <h1>Olá, Fulano</h1>
-        <BiExit onClick={desconect}/>
+        <BiExit onClick={desconect} />
       </Header>
 
       <TransactionsContainer>
@@ -45,14 +45,18 @@ export default function HomePage() {
 
 
       <ButtonsContainer>
-        <button>
-          <AiOutlinePlusCircle />
-          <p>Nova <br /> entrada</p>
+        <Link to='/nova-transacao/entrada'>
+        <button >
+            <AiOutlinePlusCircle />
+            <p>Nova <br /> entrada</p>
         </button>
+        </Link>
+        <Link to='/nova-transacao/saída'>
         <button>
           <AiOutlineMinusCircle />
           <p>Nova <br />saída</p>
         </button>
+        </Link>
       </ButtonsContainer>
 
     </HomeContainer>
@@ -96,9 +100,18 @@ const ButtonsContainer = styled.section`
   margin-bottom: 0;
   display: flex;
   gap: 15px;
-  
-  button {
+
+  a{
     width: 50%;
+    height: 115px;
+    font-size: 22px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+  button {
     height: 115px;
     font-size: 22px;
     text-align: left;
