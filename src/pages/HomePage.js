@@ -29,7 +29,10 @@ export default function HomePage() {
       setTotal(res.data.total)
     })
     promisse.catch((err) => {
-      alert(err.response.data)
+      console.log(err.response.data)
+      if(err.response.status === 401){
+        navigate('/')
+      }
     })
 
   }, [])
